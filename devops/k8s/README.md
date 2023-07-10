@@ -19,6 +19,14 @@ kubectl create secret generic mongodb-secret --from-literal=mongo-root-username=
 kubectl get services | grep "mongodb-service"
 ```
 
+## Create Route 53 domain
+## Create SSL Certificate in AWS ACM with the above domain
+
+## Copy the ARN's of created ACM to backend-service-loadbalancer.yaml
+```
+service.beta.kubernetes.io/aws-load-balancer-ssl-cert
+```
+
 # Apply the kubnetes configuration
 ``` bash
 cd eks/
