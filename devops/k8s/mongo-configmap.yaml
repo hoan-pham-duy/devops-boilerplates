@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap
 data:
-  database_url: "10.100.45.247"
+  database_url: "10.100.103.221"
