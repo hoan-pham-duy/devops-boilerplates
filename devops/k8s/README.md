@@ -8,9 +8,10 @@ aws eks --region ap-southeast-1 update-kubeconfig --name mern-devops-v3
 ``` bash
 export mongo_root_username="admin"
 export mongo_root_password="password"
-export mongo_uri="export mongo_uri="mongodb+srv://<your uri"
+export mongo_uri="mongodb+srv://<your uri>" #FOR MONGO ATLAS VERSION
+export mongo_uri="mongodb://10.100.103.221:27017" # FOR MONGO Local IN THE K8S Cluster
 
-kubectl create secret generic mongodb-secret --from-literal=mongo-root-username=$mongo_root_username --from-literal=mongo-root-password=$mongo_root_password --from-literal=mongo-uri=$mongo_uri
+kubectl create secret generic mongodb-secret --from-literal=mongo-root-username=$mongo_root_username --from-literal=mongo-root-password=$mongo_root_password --from-literal=mongo-uri=$mongo_urkubectl create secret generic mongodb-secret --from-literal=mongo-root-username=$mongo_root_username --from-literal=mongo-root-password=$mongo_root_password --from-literal=mongo-uri=$mongo_uri
 
 ```
 
