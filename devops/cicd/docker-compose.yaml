@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: "3.7"
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    user: root
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+        #extra_hosts:
+        #  - "host.docker.internal:host-gateway"
+    # network_mode: "host"
+    volumes:
+      - ./init.sh:/init.sh
+      - /var/jenkins_home:/var/jenkins_home
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    entrypoint: sh -c "/init.sh"
+    tty: true
