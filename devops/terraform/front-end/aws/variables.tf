@@ -10,6 +10,12 @@ variable "bucket_prefix" {
   default     = "mern-devops-"
 }
 
+variable "bucket_prefix_tfstate" {
+  type        = string
+  description = "The prefix for the S3 bucket"
+  default     = "mern-devops-tfstate"
+}
+
 variable "domain_name" {
   type        = string
   description = "The domain name to use"

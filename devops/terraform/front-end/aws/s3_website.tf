@@ -1,14 +1,38 @@
 # create S3 Bucket:
 resource "aws_s3_bucket" "bucket" {
   bucket_prefix = var.bucket_prefix
-
-  tags = {
-    "Project"   = "hands-on.cloud"
-    "ManagedBy" = "Terraform"
-  }
-
   force_destroy = true
 }
+
+# Create S3 Bucket for terraform state
+resource "aws_s3_bucket" "tfstate" {
+  bucket_prefix = var.bucket_prefix_tfstate
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_acl" "bucket_acl_tfstate" {
+  depends_on = [aws_s3_bucket_ownership_controls.tfstate]
+  bucket = aws_s3_bucket.tfstate.id
+  acl    = "private"
+}
+
+# block public access 
+resource "aws_s3_bucket_public_access_block" "public_block_tfstate" {
+  bucket = aws_s3_bucket.tfstate.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  restrict_public_buckets = true
+  ignore_public_acls      = true
+}
+
+resource "aws_s3_bucket_ownership_controls" "tfstate" {
+  bucket = aws_s3_bucket.tfstate.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 
 resource "aws_s3_bucket_ownership_controls" "website" {
   bucket = aws_s3_bucket.bucket.id
