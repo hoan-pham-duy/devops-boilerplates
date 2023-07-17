@@ -35,12 +35,12 @@ resource "aws_cloudfront_distribution" "cf_dist" {
 
   }
 
-  # restrictions {
-  #   geo_restriction {
-  #     restriction_type = "whitelist"
-  #     locations        = ["IN", "US", "CA"]
-  #   }
-  # }
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+      locations = []
+    }
+  }
 
   tags = {
     "Project"   = "hands-on.cloud"
