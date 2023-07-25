@@ -21,7 +21,7 @@ spec:
           - containerPort: 5000
         env:
         - name: MONGO_URI
-          valueFrom:
-            secretKeyRef:
-              name: mongodb-secret
-              key: mongo-uri 
+          valueFrom: 
+            configMapKeyRef:
+              name: mongodb-configmap
+              key: mongo-uri

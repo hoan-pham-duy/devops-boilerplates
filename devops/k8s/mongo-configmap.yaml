@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap
 data:
-  database_url: "10.100.103.221" #TODO: Update here
+  database_url: "172.20.94.135" #TODO: Update here
+  mongo-uri: "mongodb://172.20.94.135:27017"
