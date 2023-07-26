@@ -1,4 +1,11 @@
-# Learn Terraform - Provision an EKS Cluster
-
-This repo is a companion repo to the [Provision an EKS Cluster tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks), containing
-Terraform configuration files to provision an EKS cluster on AWS.
+# Fill the information
+```bash
+export TF_CLOUD_ORGANIZATION=<your organization ID>
+terraform init
+export TF_VAR_AWS_ACCESS_KEY=<your-acess-key> && export TF_VAR_AWS_SECRET_KEY=<your-secret-key> && export TF_VAR_region=<your-region> && terraform plan
+```
+# Help
+## Pull the state to terraform.tfstate file
+```bash
+    terraform state pull >> terraform.tfstate
+```
