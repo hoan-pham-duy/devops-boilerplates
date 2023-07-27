@@ -5,7 +5,7 @@ terraform {
 
   cloud {
     workspaces {
-      name = var.cloud_workspace
+      name = "v3mern-devops-" //TODO: Need to update 
     }
   }
 
