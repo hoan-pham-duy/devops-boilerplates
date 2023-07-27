@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 
-  <h3 align="center">DEVOPS BOILERPLATES</h3>
+  <h3 align="center" style="color: #2b689c">DEVOPS BOILERPLATES</h3>
 
   <p align="left">
     DEVOPS BOILERPLATES for web applications (Frontend, Backend, Databases, ...) supported in many tools and tech stacks: <br />
@@ -20,3 +20,5 @@
 
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/hoan-pham-duy/devops-boilerplates/graphs/blob/main/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/pham-duy-hoan-10a68b13a/ 
