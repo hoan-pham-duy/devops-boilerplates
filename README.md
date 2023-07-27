@@ -17,3 +17,6 @@
     <a href="https://github.com/hoan-pham-duy/devops-boilerplates/issues">Request Feature</a>
   </p>
 </div>
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/hoan-pham-duy/devops-boilerplates/graphs/blob/main/LICENSE.txt
