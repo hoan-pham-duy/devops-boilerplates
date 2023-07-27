@@ -1,10 +1,19 @@
-# Fill the information
+# Fill the information in config.sh
+
 ```bash
+cp config_example.sh config.sh
 terraform init
-export TF_CLOUD_ORGANIZATION=<your-cloud-organization> && export TF_VAR_AWS_ACCESS_KEY=<your-acess-key> && export TF_VAR_AWS_SECRET_KEY=<your-secret-key> && export TF_VAR_region=<your-region> && TF_VAR_domain_name=<your-access-key> && terraform plan
+terraform plan
+terraform apply
 ```
 # Help
 ## Pull the state to terraform.tfstate file
 ```bash
     terraform state pull >> terraform.tfstate
+```
+
+# Login to Kubernetes
+```bash
+aws eks --region us-east-1 update-kubeconfig --name <the output eks>
+
 ```
