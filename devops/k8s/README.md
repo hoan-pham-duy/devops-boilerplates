@@ -25,7 +25,7 @@ kubectl get services | grep "mongodb-service"
   mongo-uri: "mongodb://172.20.123.1:27017"
 ```
 ## Create Route 53 domain
-## Create SSL Certificate in AWS ACM with the above domain
+## Create SSL Certificate in AWS ACM with the according domain (or record A like: api.example.com)
 ## Copy the ARN's of created ACM to backend-service-loadbalancer.yaml
 ```
 service.beta.kubernetes.io/aws-load-balancer-ssl-cert
