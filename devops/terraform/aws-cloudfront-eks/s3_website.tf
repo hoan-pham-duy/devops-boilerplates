@@ -86,43 +86,43 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
   policy = data.aws_iam_policy_document.bucket_policy_document.json
 }
 
-# #upload website files to s3:
-# resource "aws_s3_object" "object" {
-#   bucket = aws_s3_bucket.bucket.id
+#upload website files to s3:
+resource "aws_s3_object" "object" {
+  bucket = aws_s3_bucket.bucket.id
 
-#   for_each     = fileset("uploads/", "*")
-#   key          = "website/${each.value}"
-#   source       = "uploads/${each.value}"
-#   etag         = filemd5("uploads/${each.value}")
-#   content_type = "text/html"
+  for_each     = fileset("uploads/", "*")
+  key          = "${each.value}"
+  source       = "uploads/${each.value}"
+  etag         = filemd5("uploads/${each.value}")
+  content_type = "text/html"
 
-#   depends_on = [
-#     aws_s3_bucket.bucket
-#   ]
+  depends_on = [
+    aws_s3_bucket.bucket
+  ]
+}
+
+# variable "upload_directory" {
+#   default = "../../../frontend/build/"
 # }
 
-variable "upload_directory" {
-  default = "../../../frontend/build/"
-}
+# variable "mime_types" {
+#   default = {
+#     htm   = "text/html"
+#     html  = "text/html"
+#     css   = "text/css"
+#     ttf   = "font/ttf"
+#     js    = "application/javascript"
+#     map   = "application/javascript"
+#     json  = "application/json"
+#   }
+# }
 
-variable "mime_types" {
-  default = {
-    htm   = "text/html"
-    html  = "text/html"
-    css   = "text/css"
-    ttf   = "font/ttf"
-    js    = "application/javascript"
-    map   = "application/javascript"
-    json  = "application/json"
-  }
-}
-
-resource "aws_s3_object" "website_files" {
-  for_each      = fileset(var.upload_directory, "**/*.*")
-  bucket        = aws_s3_bucket.bucket.id
-  key           = replace(each.value, var.upload_directory, "")
-  source        = "${var.upload_directory}${each.value}"
-  acl           = "public-read"
-  etag          = filemd5("${var.upload_directory}${each.value}")
-  content_type  = lookup(var.mime_types, split(".", each.value)[length(split(".", each.value)) - 1])
-}
+# resource "aws_s3_object" "website_files" {
+#   for_each      = fileset(var.upload_directory, "**/*.*")
+#   bucket        = aws_s3_bucket.bucket.id
+#   key           = replace(each.value, var.upload_directory, "")
+#   source        = "${var.upload_directory}${each.value}"
+#   acl           = "public-read"
+#   etag          = filemd5("${var.upload_directory}${each.value}")
+#   content_type  = lookup(var.mime_types, split(".", each.value)[length(split(".", each.value)) - 1])
+# }
