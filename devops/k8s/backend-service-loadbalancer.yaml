@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: backend-service
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: <fill your ACM arn here> #TODO: Fill it here
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:536428703888:certificate/e56b9a28-81f2-464a-989e-ba246eae428e #TODO: Fill it here
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
 spec:
   type: LoadBalancer
