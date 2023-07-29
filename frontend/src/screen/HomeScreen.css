@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+  }
+  
+.home-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: rgb(14, 70, 72);
+    color: rgb(199, 193, 193);
+    text-align: center;
+}
+
+.title {
+    color: rgb(199, 193, 193);
+    text-align: center;
+}
+
+.github {
+    align-items: center;
+    font-size : 24px; 
+    background-color: rgb(199, 193, 193);
+}
