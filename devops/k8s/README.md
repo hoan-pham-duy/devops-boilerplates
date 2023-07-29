@@ -66,6 +66,13 @@ kubectl get pods | grep grafa
 kubectl describe pod <your-grafana-pod-here>
 kubectl port-forward prometheus-grafana-8458f54cf5-h2k7c 3000
 ```
+
+### Access Prometheus UI
+Describe the port to see which port is exposed on the pod
+```bash
+kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090
+```
+![Prometheus](prometheus.png)
 ### Login Grafana
 username: admin
 password: prom-operator
