@@ -14,7 +14,15 @@ export mongo_root_password="password"
 kubectl create secret generic mongodb-secret --from-literal=mongo-root-username=$mongo_root_username --from-literal=mongo-root-password=$mongo_root_password 
 
 kubectl apply -f mongo.yaml
+kubectl apply -f mongo-configmap.yaml
+kubectl apply -f mongo-express.yaml
 ```
+### How to view mongo-express
+```bash
+kubectl get pods | grep mongo-express
+kubectl port-forward <mongo-express-port-id> 8081
+```
+Now, you can view the mongo-express in http://localhost:8081
 
 ## Update the ip address: database_url in the mongo-configmap.yaml:
 ``` bash
