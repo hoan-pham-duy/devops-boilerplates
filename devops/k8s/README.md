@@ -72,4 +72,5 @@ password: prom-operator
 
 Change the password of grafana at: https://devapo.io/blog/technology/how-to-set-up-prometheus-on-kubernetes-with-helm-charts/.
 ![Grafana Example](grafana_example.png)
+![Grafana Example 2](grafana_example_2.png)
  
