@@ -49,3 +49,27 @@ kubectl apply -f backend-service-loadbalancer.yaml
 kubectl get services
 ```
 ## Go to Route 53 Domain, create an A record alias to the loadbalancer we've created
+
+
+# Add Prometheus for monitoring & Alerting
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo add stable https://charts.helm.sh/stable
+helm repo update
+helm install prometheus prometheus-community/kube-prometheus-stack
+kubectl --namespace default get pods -l "release=prometheus"
+```
+
+## Monitoring using Grafana
+```bash
+kubectl get pods | grep grafa
+kubectl describe pod <your-grafana-pod-here>
+kubectl port-forward prometheus-grafana-8458f54cf5-h2k7c 3000
+```
+### Login Grafana
+username: admin
+password: prom-operator
+
+Change the password of grafana at: https://devapo.io/blog/technology/how-to-set-up-prometheus-on-kubernetes-with-helm-charts/.
+![Grafana Example](grafana_example.png)
+ 
