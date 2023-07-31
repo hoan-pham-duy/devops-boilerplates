@@ -80,4 +80,18 @@ password: prom-operator
 Change the password of grafana at: https://devapo.io/blog/technology/how-to-set-up-prometheus-on-kubernetes-with-helm-charts/.
 ![Grafana Example](grafana_example.png)
 ![Grafana Example 2](grafana_example_2.png)
- 
+
+# Apply ELK
+From https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-deploy-eck.html
+https://github.com/elastic/helm-charts/tree/main/elasticsearch
+https://medium.com/kocsistem/elk-stack-in-kubernetes-using-helm-52398564f7fc
+```bash
+helm repo add elastic https://helm.elastic.co
+helm install elasticsearch elastic/elasticsearch
+
+
+```
+If you want to install: 
+```bash
+helm install elasticsearch elastic/elasticsearch
+```
