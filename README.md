@@ -18,6 +18,16 @@
   </p>
 </div>
 
+### Outputs:
+
+[Setup Terraform](devops/terraform/aws-cloudfront-eks/README.md)
+
+[K8S with Prothemus and Grafana](devops/k8s/README.md)
+
+[ArgoCD](devops/argocd/README.md)
+
+
+
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/hoan-pham-duy/devops-boilerplates/graphs/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555

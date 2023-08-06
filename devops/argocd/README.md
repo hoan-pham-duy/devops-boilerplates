@@ -15,6 +15,6 @@ The password for the "admin" username:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 ### Import ../argocd/argocd-app.yaml when creating the application
-```
+
 Result:
 ![Argocd](argocd.png)
