@@ -26,3 +26,7 @@ cd ../../../frontend/
 yarn build
 aws s3 cp --recursive build/ s3://<your output S3 bucket>
 ```
+
+## Output on the Terraform Cloud
+
+![Terra](terraform.png)
