@@ -19,12 +19,21 @@
 </div>
 
 ### Outputs:
+<details>
+<summary><a href='devops/terraform/aws-cloudfront-eks/README.md'>View Terraform README</a></summary>
+<img src='./devops/terraform/aws-cloudfront-eks/terraform.png'>
+</details>
 
-[Setup Terraform](devops/terraform/aws-cloudfront-eks/README.md)
+<details>
+<summary><a href='devops/k8s/README.md'>View Kubernetes README</a></summary>
+<img src='./devops/k8s/grafana_example_2.png'>
+<img src='./devops/k8s/prometheus.png'>
+</details>
 
-[K8S with Prothemus and Grafana](devops/k8s/README.md)
-
-[ArgoCD](devops/argocd/README.md)
+<details>
+<summary><a href='devops/argocd/README.md'>View ArgoCD README</a></summary>
+<img src='./devops/argocd/argocd.png'>
+</details>
 
 
 
