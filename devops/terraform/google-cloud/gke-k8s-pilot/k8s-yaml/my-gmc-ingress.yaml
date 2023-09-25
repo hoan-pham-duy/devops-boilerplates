@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-gmc-ingress-2
+  annotations:
+    networking.gke.io/managed-certificates: "gc-k8s-eg.lighhappy.org,gc-k8s-eg.lighhappy.org-2"
+spec:
+  rules:
+    - host: gc-k8s-eg.lighhappy.org
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: my-mc-service
+                port:
+                  number: 60001
+    - host: gc-k8s-eg-2.lighhappy.org
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: my-mc-service
+                port:
+                  number: 60002
